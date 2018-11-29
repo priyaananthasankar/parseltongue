@@ -11,3 +11,6 @@ and have a bit of fun exploring main characters via PyLDAVis
 
 ## InceptionV3
 Sample code to demonstrate InceptionV3 model loading through Tensorflow libraries
+
+## DevOps
+Explore bash scripting needed to launch a Python function app in Linux Consumption Plan.
