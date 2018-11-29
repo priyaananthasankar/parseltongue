@@ -5,7 +5,7 @@ echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO 
 curl -L https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 sudo apt-get install apt-transport-https azure-cli
 # login
-az login --service-principal -u  http://PythonFunctionServicePrincipal -p test --tenant 72f988bf-86f1-41af-91ab-2d7cd011db47
+az login --service-principal -u  http://PythonFunctionServicePrincipal -p test --tenant <tenant_guid> 
 # install extension
 az extension add --source https://functionscdn.azureedge.net/public/docs/functionapp-0.0.2-py2.py3-none-any.whl --yes && 
 az extension list
