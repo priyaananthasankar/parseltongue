@@ -1,2 +1,0 @@
-# parseltongue
-Azure Serverless + ML
