@@ -44,4 +44,6 @@ az login --service-principal -u {servicePrincipal} -p {password} --tenant {tenan
 
 # Deploy to Linux Consumption Plan Function App - build native deps is optional when your packages
 # does not have many linux wheels on PyPI
+# Also make sure your linux function app is already created. Alternately you can write scripts to always
+# delete and re-create the linux function app
 func azure functionapp publish campinggear101 --build-native-deps
