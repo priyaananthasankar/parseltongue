@@ -1,3 +1,5 @@
+# Azure DevOps Bash Script for Hosted Agent Ubuntu 16.04
+
 # Install Docker through this arduous process to make sure the latest docker is installed from the 
 # Docker site and not Ubuntu's site
 
@@ -19,7 +21,6 @@ sudo apt-get install apt-transport-https azure-cli
 
 
 #Install python3.6 laboriously
-
 wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb
 sudo add-apt-repository ppa:jonathonf/python-3.6
 sudo dpkg -i packages-microsoft-prod.deb
@@ -27,7 +28,6 @@ sudo apt-get update
 sudo apt-get install -y azure-functions-core-tools python3.6 python3.6-venv
 
 # Create Virtual environment
-
 sudo python3.6 -m venv worker_env 
 source ./worker_env/bin/activate
 sudo python3.6 -m pip install --upgrade pip
