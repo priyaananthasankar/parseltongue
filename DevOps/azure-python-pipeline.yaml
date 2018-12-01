@@ -1,15 +1,16 @@
+resources:
+- repo: self
+queue:
+  name: Hosted Ubuntu 1604
+#Your build pipeline references an undefined variable named ‘lsb_release -cs’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
+variables:
+  servicePrincipalName: ''
+  servicePrincipalPassword: ''
+  servicePrincipalTenantId: ''
+  functionAppName: ''
 steps:
 - bash: |
    # Azure DevOps Bash Script for Hosted Agent Ubuntu 16.04
-   
-   # Install Docker through this arduous process to make sure the latest docker is installed from the 
-   # Docker site and not Ubuntu's site
-   
-   sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-   sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-   sudo apt-get update
-   sudo apt-cache policy docker-ce
-   sudo apt-get install -y docker-ce
    
    # Goto your project directory
    cd CampingGearProject
@@ -22,7 +23,7 @@ steps:
    sudo apt-get install apt-transport-https azure-cli
    
    
-   #Install python3.6 laboriously
+   #Install python3.6
    wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb
    sudo add-apt-repository ppa:jonathonf/python-3.6
    sudo dpkg -i packages-microsoft-prod.deb
@@ -42,11 +43,16 @@ steps:
    sudo pip freeze
    
    # Azure Login through service principal
-   az login --service-principal -u $(servicePrincipal) -p $(password) --tenant $(tenantId)
+   az login --service-principal -u $(servicePrincipalName) -p $(servicePrincipalPassword) --tenant $(servicePrincipalTenantId)
+   
+   # Add python as worker runtime
+   func settings add FUNCTIONS_WORKER_RUNTIME python
    
    # Deploy to Linux Consumption Plan Function App - build native deps is optional when your packages
    # does not have many linux wheels on PyPI
    # Also make sure your linux function app is already created. Alternately you can write scripts to always
    # delete and re-create the linux function app
+   
    func azure functionapp publish $(functionAppName) --build-native-deps
-  displayName: 'Bash Script to Deploy Python Function on Linux Consumption Plan'
+  displayName: 'Bash Script'
+
