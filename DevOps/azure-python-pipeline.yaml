@@ -2,8 +2,8 @@ resources:
 - repo: self
 queue:
   name: Hosted Ubuntu 1604
-#Your build pipeline references an undefined variable named ‘lsb_release -cs’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
 variables:
+  functionAppProject: ''
   servicePrincipalName: ''
   servicePrincipalPassword: ''
   servicePrincipalTenantId: ''
@@ -13,7 +13,7 @@ steps:
    # Azure DevOps Bash Script for Hosted Agent Ubuntu 16.04
    
    # Goto your project directory
-   cd CampingGearProject
+   cd $(functionAppProject)
    
    # Install Azure CLI
    AZ_REPO=$(lsb_release -cs)
