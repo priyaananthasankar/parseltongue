@@ -51,9 +51,8 @@ Accepts image URL's and infers the image using a simple HTTP Trigger.
 
 https://inditexapp.azurewebsites.net/api/InceptionV3Classifier?img=https://images.homedepot-static.com/productImages/fe64c5e0-89c6-4cdf-84d3-57a181cfca28/svn/navy-red-kap-work-jackets-jp66nv-rg-l-64_1000.jpg
 
-# Explore Code
 
-# parseltongue
+# Explore parseltongue Code
 This repository contains samples built with Azure Functions on Python (private preview) to infer/predict from ML models
 
 ## Camping Gear
