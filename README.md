@@ -1,21 +1,3 @@
-# parseltongue
-This repository contains samples built with Azure Functions on Python (private preview) to infer/predict from ML models
-
-## Camping Gear
-Predict the gear type of an image: e.g., boots, gloves, harness, jacket etc, given a model that is trained using Keras on 
-multiple camping images.
-
-## LDA Modeling
-Topic model Jane Austen's books or Sir Arthur Conan Doyle's books from Gutenberg database using Gensim and NTLK libraries
-and have a bit of fun exploring main characters via PyLDAVis
-
-## InceptionV3
-Sample code to demonstrate InceptionV3 model loading through Tensorflow libraries
-
-## DevOps
-Explore bash scripting needed to launch a Python function app in Linux Consumption Plan.
-
-
 # Python on Azure Functions
 
 ## Status: Public Preview
@@ -68,3 +50,22 @@ Accepts image URL's and infers the image using a simple HTTP Trigger.
 ### Try it out!
 
 https://inditexapp.azurewebsites.net/api/InceptionV3Classifier?img=https://images.homedepot-static.com/productImages/fe64c5e0-89c6-4cdf-84d3-57a181cfca28/svn/navy-red-kap-work-jackets-jp66nv-rg-l-64_1000.jpg
+
+# Explore Code
+
+# parseltongue
+This repository contains samples built with Azure Functions on Python (private preview) to infer/predict from ML models
+
+## Camping Gear
+Predict the gear type of an image: e.g., boots, gloves, harness, jacket etc, given a model that is trained using Keras on 
+multiple camping images.
+
+## LDA Modeling
+Topic model Jane Austen's books or Sir Arthur Conan Doyle's books from Gutenberg database using Gensim and NTLK libraries
+and have a bit of fun exploring main characters via PyLDAVis
+
+## InceptionV3
+Sample code to demonstrate InceptionV3 model loading through Tensorflow libraries
+
+## DevOps
+Explore bash scripting needed to launch a Python function app in Linux Consumption Plan.
