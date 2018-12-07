@@ -4,3 +4,5 @@ COPY . /home/site/wwwroot
 
 RUN cd /home/site/wwwroot && \
     pip install -r requirements.txt
+
+EXPOSE 8080
