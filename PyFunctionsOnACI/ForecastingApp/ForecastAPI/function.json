@@ -1,0 +1,34 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "name": "input",
+      "direction": "in",
+      "type": "blob",
+      "path": "forecastinput/{name}",
+      "connection": "AzureWebJobsStorage"
+    },
+    {
+      "name": "output",
+      "direction": "out",
+      "type": "blob",
+      "path": "forecastoutput/{result}",
+      "connection": "AzureWebJobsStorage"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    }
+  ]
+}
