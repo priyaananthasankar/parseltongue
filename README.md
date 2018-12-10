@@ -53,7 +53,7 @@ https://inditexapp.azurewebsites.net/api/InceptionV3Classifier?img=https://image
 
 
 # parseltongue
-This repository contains samples built with Azure Functions on Python (private preview) to infer/predict from ML models
+This repository contains samples built with Azure Functions on Python (public preview) to infer/predict from ML models
 
 ## Camping Gear
 Predict the gear type of an image: e.g., boots, gloves, harness, jacket etc, given a model that is trained using Keras on 
