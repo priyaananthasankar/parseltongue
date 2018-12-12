@@ -11,7 +11,7 @@
             "type": "String"
         },
         "containerImageName" : {
-            "defaultValue": "prananth/forecast-app:dev",
+            "defaultValue": "prananth/forecasting:v2",
             "type": "String"
         },
         "storageConnectionString" : {
