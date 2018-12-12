@@ -7,6 +7,7 @@ https://machinelearningmastery.com/autoregression-models-time-series-forecasting
 
 This example demonstrates Azure Functions written in Python deployed on an Azure Container Instance
 
+[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
 
 # Steps to develop
 
