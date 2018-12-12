@@ -32,7 +32,7 @@
             "name": "[parameters('storageAccountName')]",
             "type": "Microsoft.Storage/storageAccounts",
             "apiVersion": "2018-02-01",
-            "location": "[parameters('location')]",
+            "location": "westus2",
             "kind": "StorageV2",
             "sku": {
                 "name": "Standard_LRS",
