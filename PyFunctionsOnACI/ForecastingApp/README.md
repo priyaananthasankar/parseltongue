@@ -41,22 +41,22 @@ https://machinelearningmastery.com/autoregression-models-time-series-forecasting
     
        Eg: `docker run -it -p 8080:80 priya/forecast-app:v1`
        
-6. Publish to Azure Container Instance
+# Steps to deploy through Azure CLI
+       
+1. Create Deployments
 
-    1. Create an Azure Storage Account and Blob Storage in your subscription. Create Blob containers called **forecastinput** and **forecastoutput**
+    1. Run `az group deployment create -g TestRG --template-file ./azuredeploy.json --parameters storageAccountName={provide storage account name}`
     
-    2. Upload **daily-minimum-temperatures.csv** file from the dataset folder in this repo into **forecastinput** folder.
+    (or)
     
-    3. Click the Deploy to Azure Button in your fork (make sure you provide unique names to resource group/container DNS name)
-    
-       (or)
-    
-    4. Publish through Azure CLI by creating Azure Container Registry, pushing image and creating Azure Container Instance from the steps here:
+    2. Publish through Azure CLI by creating Azure Container Registry, pushing image and creating Azure Container Instance from the steps here:
     
        https://docs.microsoft.com/en-us/azure/container-instances/container-instances-tutorial-prepare-app
        
-    5. Using a HTTP client call your function: 
-    
-       http://**{dnsname of your deployed container app}**/api/ForecastAPI?name=daily-minimum-temperatures.csv&result=result.png
-    
-    6. Check result.png graph in the forecastoutput container of your blob.
+# Steps to test
+
+   1. Upload **daily-minimum-temperatures.csv** file from the dataset folder in this repo into **forecastinput** folder in the blob storage that was deployed 
+   
+   2. Using a HTTP client call your function:  http://**{dnsname of your deployed container app}**/api/ForecastAPI?name=daily-minimum-temperatures.csv&result=result.png
+   
+   2. Check result.png graph in the forecastoutput container of your blob.
