@@ -41,12 +41,20 @@ This example demonstrates Azure Functions written in Python deployed on an Azure
        
 6. Publish to Azure Container Instance
 
-    1. Click the Deploy to Azure Button in your fork (make sure you provide unique names to resource group/container DNS name)
+    1. Create an Azure Storage Account and Blob Storage in your subscription. Create Blob containers called **forecastinput** and **forecastoutput**
+    
+    2. Upload **daily-minimum-temperatures.csv** file from the dataset folder in this repo into **forecastinput** folder.
+    
+    3. Click the Deploy to Azure Button in your fork (make sure you provide unique names to resource group/container DNS name)
     
        (or)
     
-    2. Publish through Azure CLI by creating Azure Container Registry, pushing image and creating Azure Container Instance from the steps here:
+    4. Publish through Azure CLI by creating Azure Container Registry, pushing image and creating Azure Container Instance from the steps here:
     
        https://docs.microsoft.com/en-us/azure/container-instances/container-instances-tutorial-prepare-app
-    
        
+    5. Using a HTTP client call your function: 
+    
+    http://{dnsname of your deployed container app}/api/ForecastAPI?name=daily-minimum-temperatures.csv&result=result.png
+    
+    6. Check result.png graph in the forecastoutput container of your blob.
