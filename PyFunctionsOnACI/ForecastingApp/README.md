@@ -1,11 +1,13 @@
 # Time Series Forecasting using Python on Azure Functions
 
+- This example demonstrates Azure Functions in Python deployed on an Azure Container Instance, that performs forecasting using scikit learn, statsmodel Python library. 
+
+- It uses a Blob Storage input binding to read input and produce output and is triggered through HTTP.
+
 Reference code:
 https://machinelearningmastery.com/autoregression-models-time-series-forecasting-python/
 
 # One Click Deploy to Azure
-
-This example demonstrates Azure Functions written in Python deployed on an Azure Container Instance
 
 [![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
 
