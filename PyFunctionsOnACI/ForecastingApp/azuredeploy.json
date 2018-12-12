@@ -17,10 +17,49 @@
         "storageConnectionString" : {
             "defaultValue": "",
             "type": "String"
+        },
+        "storageAccountName" : {
+            "defaultValue" : "forecaststorage",
+            "type" : "String"
         }
     }, 
-    "variables": {},
+    "variables": {
+        "inputContainerName" : "forecastinput",
+        "outputContainerName" : "forecastoutput"
+    },
     "resources": [
+        {
+            "name": "[parameters('storageAccountName')]",
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2018-02-01",
+            "location": "[parameters('location')]",
+            "kind": "StorageV2",
+            "sku": {
+                "name": "Standard_LRS",
+                "tier": "Standard"
+            },
+            "properties": {
+                "accessTier": "Hot"
+            },
+            "resources": [
+                {
+                    "name": "[concat('default/', variables('inputContainerName'))]",
+                    "type": "blobServices/containers",
+                    "apiVersion": "2018-03-01-preview",
+                    "dependsOn": [
+                        "[parameters('storageAccountName')]"
+                    ]
+                },
+                {
+                    "name": "[concat('default/', variables('outputContainerName'))]",
+                    "type": "blobServices/containers",
+                    "apiVersion": "2018-03-01-preview",
+                    "dependsOn": [
+                        "[parameters('storageAccountName')]"
+                    ]
+                }
+            ]
+        },
         {
             "comments": "Container group resource",
             "type": "Microsoft.ContainerInstance/containerGroups",
