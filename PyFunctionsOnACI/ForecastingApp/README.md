@@ -55,6 +55,6 @@ This example demonstrates Azure Functions written in Python deployed on an Azure
        
     5. Using a HTTP client call your function: 
     
-    http://{dnsname of your deployed container app}/api/ForecastAPI?name=daily-minimum-temperatures.csv&result=result.png
+       http://**{dnsname of your deployed container app}**/api/ForecastAPI?name=daily-minimum-temperatures.csv&result=result.png
     
     6. Check result.png graph in the forecastoutput container of your blob.
