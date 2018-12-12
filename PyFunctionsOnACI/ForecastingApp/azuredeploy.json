@@ -1,0 +1,70 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "containerGroupName": {
+            "defaultValue": "forecast-app",
+            "type": "String"
+        },
+        "dnsName": {
+            "defaultValue" : "forecastapp",
+            "type": "String"
+        },
+        "containerImageName" : {
+            "defaultValue": "prananth/forecast-app:dev",
+            "type": "String"
+        },
+        "storageConnectionString" : {
+            "defaultValue": "",
+            "type": "String"
+        }
+    }, 
+    "variables": {},
+    "resources": [
+        {
+            "comments": "Container group resource",
+            "type": "Microsoft.ContainerInstance/containerGroups",
+            "name": "[parameters('containerGroupName')]",
+            "apiVersion": "2018-04-01",
+            "location": "westus2",
+            "scale": null,
+            "properties": {
+                "containers": [
+                    {
+                        "name": "[parameters('containerGroupName')]",
+                        "properties": {
+                            "image": "[parameters('containerImageName')]",
+                            "ports": [
+                                {
+                                    "port": 80
+                                }
+                            ],
+                            "environmentVariables": [
+                                { "name": "AzureWebJobsStorage", "value":"[parameters('storageConnectionString')]" }
+                            ],
+                            "resources": {
+                                "requests": {
+                                    "memoryInGB": 1.5,
+                                    "cpu": 1
+                                }
+                            }
+                        }
+                    }
+                ],
+                "restartPolicy": "Always",
+                "ipAddress": {
+                    "ports": [
+                        {
+                            "protocol": "TCP",
+                            "port": 80
+                        }
+                    ],
+                    "type": "Public",
+                    "dnsNameLabel": "[parameters('dnsName')]"
+                },
+                "osType": "Linux"
+            },
+            "dependsOn": []
+        }
+    ]
+}
