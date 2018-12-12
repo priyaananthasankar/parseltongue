@@ -14,10 +14,6 @@
             "defaultValue": "prananth/forecasting:v2",
             "type": "String"
         },
-        "storageConnectionString" : {
-            "defaultValue": "",
-            "type": "String"
-        },
         "storageAccountName" : {
             "defaultValue" : "forecaststorage",
             "type" : "String"
@@ -29,6 +25,7 @@
     },
     "resources": [
         {
+            "comments": "Storage Account resource",
             "name": "[parameters('storageAccountName')]",
             "type": "Microsoft.Storage/storageAccounts",
             "apiVersion": "2018-02-01",
@@ -79,7 +76,7 @@
                                 }
                             ],
                             "environmentVariables": [
-                                { "name": "AzureWebJobsStorage", "value":"[parameters('storageConnectionString')]" }
+                                { "name": "AzureWebJobsStorage", "value":"[Concat('DefaultEndpointsProtocol=https;AccountName=',parameters('storageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName')), providers('Microsoft.Storage', 'storageAccounts').apiVersions[0]).keys[0].value)]" }
                             ],
                             "resources": {
                                 "requests": {
