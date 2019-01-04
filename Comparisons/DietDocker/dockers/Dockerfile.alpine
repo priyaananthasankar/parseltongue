@@ -1,0 +1,4 @@
+FROM microsoft/dotnet:2.1-aspnetcore-runtime-alpine
+RUN apk add --no-cache python3 && \
+    apk add --no-cache bash && \
+    apk update && apk add --no-cache libc6-compat

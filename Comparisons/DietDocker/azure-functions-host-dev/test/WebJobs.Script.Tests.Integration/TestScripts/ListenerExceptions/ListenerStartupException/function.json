@@ -1,0 +1,12 @@
+﻿{
+    "bindings": [
+        {
+            "type": "eventHubTrigger",
+            "name": "input",
+            "cardinality": "many",
+            "direction": "in",
+            "connection": "AzureWebJobsEventHubReceiver",
+            "eventHubName": "InvalidHubName"
+        }
+    ]
+}

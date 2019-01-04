@@ -1,0 +1,8 @@
+FROM microsoft/dotnet:2.1-aspnetcore-runtime
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends git wget build-essential zlib1g-dev
+RUN wget https://www.python.org/ftp/python/3.6.3/Python-3.6.3.tgz && \
+    tar -xvf Python-3.6.3.tgz && \
+    rm -rf Python-3.6.3.tgz && \
+    cd Python-3.6.3 && \
+    ./configure --enable-optimizations && make && make install
