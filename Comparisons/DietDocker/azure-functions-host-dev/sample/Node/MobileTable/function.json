@@ -1,0 +1,17 @@
+﻿{
+    "bindings": [
+        {
+            "type": "queueTrigger",
+            "name": "input",
+            "direction": "in",
+            "queueName": "samples-mobiletables-node"
+        },
+        {
+            "type": "mobileTable",
+            "direction": "out",
+            "name": "$return",
+            "tableName": "Item",
+            "connection": "AzureWebJobs_TestMobileUri"
+        }
+    ]
+}

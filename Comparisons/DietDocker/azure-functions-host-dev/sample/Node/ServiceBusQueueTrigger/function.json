@@ -1,0 +1,22 @@
+﻿{
+    "bindings": [
+        {
+            "type": "serviceBusTrigger",
+            "name": "inMessage",
+            "direction": "in",
+            "queueName": "samples-input"
+        },
+        {
+            "type": "serviceBus",
+            "name": "outMessage",
+            "direction": "out",
+            "queueName": "samples-input"
+        },
+        {
+            "type": "blob",
+            "name": "blob",
+            "direction": "out",
+            "path": "samples-output/{id}"
+        }
+    ]
+}

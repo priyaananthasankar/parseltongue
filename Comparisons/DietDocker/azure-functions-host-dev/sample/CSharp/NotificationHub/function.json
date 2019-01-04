@@ -1,0 +1,15 @@
+﻿{
+    "bindings": [
+        {
+            "type": "queueTrigger",
+            "name": "input",
+            "direction": "in",
+            "queueName": "samples-notificationHub-csharp"
+        },
+        {
+            "type": "notificationHub",
+            "name": "$return",
+            "direction": "out"
+        }
+    ]
+}

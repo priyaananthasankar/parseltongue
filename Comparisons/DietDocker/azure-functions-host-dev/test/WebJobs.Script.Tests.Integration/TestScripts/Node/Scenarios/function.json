@@ -1,0 +1,15 @@
+﻿{
+    "bindings": [
+        {
+            "type": "manualTrigger",
+            "name": "input",
+            "direction": "in"
+        },
+        {
+            "type": "blob",
+            "name": "blob",
+            "direction": "out",
+            "path": "{container}/{sys.randGuid}"
+        }
+    ]
+}
