@@ -8,7 +8,6 @@ RUN apk add --no-cache bash protobuf python3
 ENV PublishWithAspNetCoreTargetManifest false
 
 RUN wget https://github.com/priyaananthasankar/parseltongue/tree/master/Comparisons/DietDocker/azure-functions-host-dev.tar.gz && \
-    gunzip azure-functions-host-dev.tar.gz && \
     tar xzf azure-functions-host-dev.tar && \
     cd azure-functions-host-dev && \
     dotnet publish -v q /p:BuildNumber="00001" /p:CommitHash=dev src/WebJobs.Script.WebHost/WebJobs.Script.WebHost.csproj --output /azure-functions-host
