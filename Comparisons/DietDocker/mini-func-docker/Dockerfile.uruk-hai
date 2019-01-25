@@ -2,6 +2,8 @@ FROM mcr.microsoft.com/azure-functions/base:2.0 as runtime-image
 
 # From a dotnet alpine image...
 FROM microsoft/dotnet:2.1-aspnetcore-runtime-alpine
+
+# Copy Azure Functions Host .NET Dependencies
 COPY --from=runtime-image ["/azure-functions-host", "/azure-functions-host"]
  
 # install python and your stuff here.
