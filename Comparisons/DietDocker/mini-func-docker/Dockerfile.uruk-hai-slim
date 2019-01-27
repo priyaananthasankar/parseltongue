@@ -27,7 +27,7 @@ RUN pip3 install --no-index --find-links=/tmp/wheels azure-functions azure-funct
 FROM microsoft/dotnet:2.1-aspnetcore-runtime-alpine
 
 # Copy Azure Functions Host .NET Dependencies
-COPY --from=runtime-image ["/azure-functions-host", "/azure-functions-host"]
+COPY --from=python-image ["/azure-functions-host", "/azure-functions-host"]
 RUN mkdir /tmp/wheels
 COPY --from=python-image /tmp/wheels /tmp/wheels
 # 
