@@ -1,0 +1,27 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "functionapp1": {
+            "value": ""
+        },
+        "functionapp2":{
+            "value" : ""
+        },
+        "storageName":{
+            "value": ""
+        },
+        "outputBlobContainerName":{
+            "value" : ""
+        },
+        "eventSubName1" : {
+            "value" : ""
+        },
+        "eventSubName2" : {
+            "value" : ""
+        },
+        "endpoint1" : {
+            "value" : ""
+        }
+    }
+}
