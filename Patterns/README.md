@@ -23,7 +23,7 @@ we see raw data uploaded to a blob which fires an event into Azure Event Grid, t
 - Deploy your function app using func azure functionapp publish `functionappname` from previous step
 - az group deployment create -g <Resource Group Name> --template-file azure-deploy-event-grid-subscription.json
 
-# Test
+# Test Sample
 
 - Drop a txt file into "raw" container in your deployed Azure Storage
 - Check the "cleaned" container in your deployed Azure Storage for the same file with extension filename_cleaned.fileextension
