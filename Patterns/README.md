@@ -1,4 +1,4 @@
-# Blob - Event Grid Subscription - WebHook - Python Function Pattern
+# Blob - Event Grid Subscription - Python Function Pattern
 
 This sample demonstrates a common pattern of blob to event grid to python functions architecture. This architecture represents a common Machine learning pipeline where
 we see raw data uploaded to a blob which fires an event into Azure Event Grid, that is connected to a Python function, which uses pandas to clean data and  other libraries to preprocess data for ML training/inference purposes.
