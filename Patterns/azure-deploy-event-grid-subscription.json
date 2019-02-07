@@ -21,15 +21,19 @@
             "metadata": {
                 "description": "Provide the URL for the WebHook to receive events. Create your own endpoint for events."
             }
+        },
+        "storageName": {
+            "type": "string",
+            "defaultValue": "custstorage101",
+            "metadata": {
+                "description": "Provide a name for the Event Grid subscription."
+            }
         }
-    },
-    "variables": {
-        "storageName" : "gestorage101"
     },
     "resources": [
         {
             "type": "Microsoft.Storage/storageAccounts/providers/eventSubscriptions",
-            "name": "[concat(variables('storageName'), '/Microsoft.EventGrid/', parameters('eventSubName1'))]",
+            "name": "[concat(parameters('storageName'), '/Microsoft.EventGrid/', parameters('eventSubName1'))]",
             "apiVersion": "2018-01-01",
             "properties": {
                 "destination": {
