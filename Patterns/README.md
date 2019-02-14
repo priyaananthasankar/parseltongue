@@ -24,7 +24,7 @@ we see raw data uploaded to a blob which fires an event into Azure Event Grid, t
     - functionappname is from the previous step
     - build native deps is used only when you need to build native dependencies
 - az group deployment create -g `resource_group_name` --template-file azure-deploy-event-grid-subscription.json --parameters @azuredeployeg.parameters.json
-    - endpoint1 is usually "https://`functionappname`.azurewebsites.net/api/httptrigger1
+    - endpoint1 is usually https://`functionappname`.azurewebsites.net/api/httptrigger1
 
 # Test Sample
 
