@@ -3,6 +3,8 @@
 This sample demonstrates a common pattern of blob to event grid to python functions architecture. This architecture represents a common Machine learning pipeline where
 we see raw data uploaded to a blob which fires an event into Azure Event Grid, that is connected to a Python function, which uses pandas to clean data and  other libraries to preprocess data for ML training/inference purposes.
 
+Use this pattern to insert your own cleaning code into the respective functions. Pandas is already wired.
+
 # Azure Resources
 
 - Azure Function V2 on Linux Consumption Plan with two HttpTriggers
