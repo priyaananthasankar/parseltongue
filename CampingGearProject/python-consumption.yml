@@ -1,9 +1,9 @@
 # Configure the details of the functionapp
 variables:
-  azureSubscription: '{ARM ACCESS TOKEN NAME}'
-  storageName: '{STORAGE NAME OF FUNCTIONAPP}'
-  functionappName: '{NAME OF FUNCTIONAPP}'
-  resourceGroupName: '{RESOURCE GROUP NAME OF FUNCTIONAPP}'
+  azureSubscription: 'cda95f8c-0380-4645-8589-62a3abe9a0a9'
+  storageName: 'campinggearcse'
+  functionappName: 'campidentify'
+  resourceGroupName: 'CampingGear'
 
 jobs:
   # Build the python packages in a virtual env
