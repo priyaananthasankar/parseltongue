@@ -1,6 +1,6 @@
 # Configure the details of the functionapp
 variables:
-  azureSubscription: 'cda95f8c-0380-4645-8589-62a3abe9a0a9'
+  azureSubscription: 'CampGearSub'
   storageName: 'campinggearcse'
   functionappName: 'campidentify'
   resourceGroupName: 'CampingGear'
