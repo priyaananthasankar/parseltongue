@@ -52,14 +52,14 @@ jobs:
         destination: azureBlob
         storage: "$(storageName)"
         containerName: 'azure-build'
-    - task: createsastoken
+    - task: createsastoken@1
       inputs:
         ConnectedServiceName: "$(azureSubscription)"
         StorageAccountRM: "$(storageName)"
         SasTokenTimeOutInHours: 10000
         Permission: 'r'
         StorageContainerName: 'azure-build'
-    - task: AzureAppServiceSetAppSettings
+    - task: AzureAppServiceSetAppSettings@2
       inputs:
         ConnectedServiceName: "$(azureSubscription)"
         WebAppName: "$(functionappName)"

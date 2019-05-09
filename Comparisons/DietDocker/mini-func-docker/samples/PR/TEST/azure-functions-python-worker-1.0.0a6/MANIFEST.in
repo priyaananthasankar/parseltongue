@@ -1,3 +1,0 @@
-recursive-include azure *.py *.pyi
-recursive-include tests *.py *.json
-include LICENSE README.md

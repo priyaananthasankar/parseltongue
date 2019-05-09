@@ -14,10 +14,10 @@ def init_func():
     #subprocess.Popen("func host start",shell=True)
     # The os.setsid() is passed in the argument preexec_fn so
     # it's run after the fork() and before  exec() to run the shell.
-    #pro = subprocess.Popen(['func','host','start'],stdout=subprocess.PIPE, shell=True, preexec_fn=os.setsid) 
-    #yield
-    #print("tearing down functions host...")
-    #os.killpg(os.getpgid(pro.pid), signal.SIGTERM)
+    pro = subprocess.Popen(['func','host','start'],stdout=subprocess.PIPE, shell=True, preexec_fn=os.setsid) 
+    yield
+    print("tearing down functions host...")
+    os.killpg(os.getpgid(pro.pid), signal.SIGTERM)
 
 def test_eg_validation(init_func):
     with open('subvalidation.json') as f:

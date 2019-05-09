@@ -34,7 +34,8 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         pass
     else:
         container_name = req_body.get('container_name')
-        container_models = container_name + "models"
+#        container_models = container_name + "models"
+        container_models = "ldamodel"
 
     _nltk_stopwords.append("could")
     _nltk_stopwords.append("would")
