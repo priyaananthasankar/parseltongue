@@ -1,0 +1,18 @@
+{
+  "scriptFile": "main.py",
+  "disabled": false,
+  "bindings": [
+    {
+      "type": "timerTrigger",
+      "direction": "in",
+      "name": "timer",
+      "schedule": "*/5 * * * * *"
+    },
+    {
+      "direction": "out",
+      "name": "pastdue",
+      "type": "http"
+    }
+  ]
+}
+

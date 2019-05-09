@@ -1,0 +1,25 @@
+Metadata-Version: 2.0
+Name: grpcio-tools
+Version: 1.14.2
+Summary: Protobuf code generator for gRPC
+Home-page: https://grpc.io
+Author: The gRPC Authors
+Author-email: grpc-io@googlegroups.com
+License: Apache License 2.0
+Description-Content-Type: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: License :: OSI Approved :: Apache Software License
+Requires-Dist: protobuf (>=3.5.0.post1)
+Requires-Dist: grpcio (>=1.14.2)
+
+UNKNOWN
+
+

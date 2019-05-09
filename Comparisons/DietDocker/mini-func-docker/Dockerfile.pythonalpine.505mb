@@ -30,7 +30,7 @@ COPY --from=runtime-image ["/azure-functions-host", "/azure-functions-host"]
 RUN mkdir /tmp/wheels
 COPY --from=python-image /tmp/wheels /tmp/wheels
 # 
-RUN apk add --no-cache libc6-compat && \
+RUN apk add --no-cache libc6-compat make automake gcc g++ subversion python3-dev && \
     pip3 install --no-index --find-links=/tmp/wheels azure-functions azure-functions-worker grpcio grpcio-tools protobuf setuptools six && \
     rm -rf /tmp/wheels
 
@@ -59,12 +59,12 @@ ENV ASPNETCORE_URLS=http://+:80 \
     DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=true
 
 # Install ASP.NET Core
-ENV ASPNETCORE_VERSION 2.1.6
+ENV ASPNETCORE_VERSION 2.2.2
 
 RUN apk add --no-cache --virtual .build-deps \
         openssl \
     && wget -O aspnetcore.tar.gz https://dotnetcli.blob.core.windows.net/dotnet/aspnetcore/Runtime/$ASPNETCORE_VERSION/aspnetcore-runtime-$ASPNETCORE_VERSION-linux-musl-x64.tar.gz \
-    && aspnetcore_sha512='f909a6b70d105588c0d4c684e88c1eb2b83001ba55b9bfb0932807953ea9756c5539d3b9bd11666cb07cc68ed362f3786c8f6a0ff91da072e4b67cd8b5abc16a' \
+    && aspnetcore_sha512='59e2e0eb092d90ba53814c74259f59dcb8aa11b409b908e849aa0d851ec6cef7d1616e02c23d37e84901ca92fd9a6eb05c522ef8668da1fa6a518211532b41ab' \
     && echo "$aspnetcore_sha512  aspnetcore.tar.gz" | sha512sum -c - \
     && mkdir -p /usr/share/dotnet \
     && tar -zxf aspnetcore.tar.gz -C /usr/share/dotnet \

@@ -1,0 +1,16 @@
+{
+  "scriptFile": "main.py",
+  "disabled": false,
+  "bindings": [
+    {
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req"
+    },
+    {
+      "type": "yolo",
+      "direction": "out",
+      "name": "ret"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "scriptFile": "__init__.py",
+  "disabled": false,
+
+  "bindings": [
+    {
+      "direction": "in",
+      "type": "cosmosDBTrigger",
+      "name": "docs",
+      "databaseName": "test",
+      "collectionName": "items",
+      "id": "cosmosdb-trigger-test",
+      "leaseCollectionName": "leases",
+      "connectionStringSetting": "AzureWebJobsCosmosDBConnectionString",
+      "createLeaseCollectionIfNotExists": true
+    },
+    {
+      "type": "blob",
+      "direction": "out",
+      "name": "$return",
+      "connection": "AzureWebJobsStorage",
+      "path": "python-worker-tests/test-cosmosdb-triggered.txt"
+    }
+  ]
+}
