@@ -29,4 +29,4 @@ six==1.12.0
 sklearn==0.0
 statsmodels==0.9.0
 urllib3==1.24.1
-Werkzeug==0.14.1
+Werkzeug==0.15.3
