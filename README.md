@@ -1,9 +1,9 @@
 # Python on Azure Functions
 
-## Status: GA : The latest on this product is available [here](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-python)
+## Status: GA : Please refer official documentation [here](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-python)
 * Exploring Functions on AKS to use GPU's https://medium.com/@asavaritayal/azure-functions-on-kubernetes-75486225dac0 
 
-You can explore this but all of these samples are now moved officially into Azure Samples. 
+You can explore this repository but all of these samples are now moved officially into Azure Samples - Please refer official documentation. 
 
 # Machine Learning with Functions
 
