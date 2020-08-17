@@ -1,13 +1,9 @@
 # Python on Azure Functions
 
-## Status: Public Preview
-* Azure Functions V2 with Python is currently in public preview with Linux Consumption Plan.
-* Currently cold start is 10-12 secs. Improvements are planned.
+## Status: GA : The latest on this product is available [here](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-python)
 * Exploring Functions on AKS to use GPU's https://medium.com/@asavaritayal/azure-functions-on-kubernetes-75486225dac0 
 
-# Try it out!
-* https://aka.ms/functions-python-preview 
-* https://aka.ms/functions-consumptionlinux-preview 
+You can explore this but all of these samples are now moved officially into Azure Samples. 
 
 # Machine Learning with Functions
 
