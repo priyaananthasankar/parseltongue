@@ -5,7 +5,7 @@ grpcio==1.14.2
 grpcio-tools==1.14.2
 kiwisolver==1.0.1
 matplotlib==3.0.2
-numpy==1.15.4
+numpy==1.22.0
 pandas==0.23.4
 patsy==0.5.1
 protobuf==3.6.1
