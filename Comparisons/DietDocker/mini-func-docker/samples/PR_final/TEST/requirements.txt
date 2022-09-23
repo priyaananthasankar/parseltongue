@@ -3,5 +3,5 @@ azure-functions-worker==1.0.0b3
 grpcio==1.14.2
 grpcio-tools==1.14.2
 numpy==1.16.2
-protobuf==3.7.1
+protobuf==3.18.3
 six==1.12.0
